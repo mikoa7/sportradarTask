@@ -1,1 +1,11 @@
 @import 'semantic-ui-css/semantic.min.css';
+#win {
+    background-color: rgb(8, 245, 39);
+  }
+#loose{
+    background-color: red;
+}
+#draw{
+    background-color: orange;
+}
+  
