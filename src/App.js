@@ -4,7 +4,6 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Ekstraklasa20_21 from './Ekstraklasa20_21';
 import Ekstraklasa19_20 from './Ekstraklasa19_20';
-import Ekstraklasa21_22 from './Ekstraklasa21_22';
 import { useEffect, useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -12,7 +11,6 @@ import { render } from '@testing-library/react';
 
 
 function App() {
- 
   const [season,setSeason] = useState([""])
   const [names,setNames] = useState([])
   const getData = async () => {
@@ -32,43 +30,29 @@ function App() {
   console.log(names)
   const Component = () => {
     render(
-      
-        <Ekstraklasa20_21 />
-   
+        <Ekstraklasa20_21 className="ms-3"/>
     )
   }
   const Componentt = () => {
     render(
-      
         <Ekstraklasa21_22 />
-   
     )
   }
-  let index = 0;
   return (
-   
-  
     <div className="d-flex m-3">
      <DropdownButton id="dropdown-basic-button" title="Seasons">
-    
     { season.map((name) => {
       setNames[name.name]
       console.log(names)
       console.log(name)
     return (
-      
-      <Dropdown.Item  id={index++} onClick={Component} href="#/action-1" >{name.name}
-     
+      <Dropdown.Item onClick={Component} href="#/action-1" >{name.name}
       </Dropdown.Item>
     )
-   
-
   })}
-   <Dropdown.Item  id="2" onClick={Componentt} href="#/action-2" >
-  
-  </Dropdown.Item>
-  </DropdownButton>
-  
+    <Dropdown.Item  id="2" onClick={Componentt} href="#/action-2" >
+      </Dropdown.Item>
+    </DropdownButton>
     </div>
   );
 };

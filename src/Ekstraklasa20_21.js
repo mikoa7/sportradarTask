@@ -20,27 +20,22 @@ function Ekstraklasa20_21() {
 
   return (
     <div className="Ekstraklasa20_21">
-         <table className='bg-secondary rounded'>
+         <table className='main rounded'>
         <tr>
           <th className='p-3'>Gospodarz</th>
-          <th>Wynik</th>
-          <th className='p-4'>Przeciwnik</th>
-          <th className='ml-4'>Data meczu</th>
-          <th>Stadion</th>
+          <th className='scoreF'>Wynik</th>
+          <th className='p-3'>Przeciwnik</th>
+          <th className='ms-5 d-flex'>Data meczu</th>
+          <th className='venue'>Stadion</th>
         </tr>
         <td className=''>
         { schedule.map((sport_event) => {
-          let index = 0;
         return (
-         
           <div className="m-1 p-2">
-
-            <tr id={++index} key={sport_event.results}><td className="">{sport_event.sport_event.competitors[0].name}</td></tr>
+            <tr  key={sport_event.results}><td className="">{sport_event.sport_event.competitors[0].name}</td></tr>
           </div>
         )
-     
       })};
-      
       </td>
       <td>{schedule.map((sport_event_status) => {
 
@@ -60,16 +55,12 @@ let bbg;
    bbg="bg-success px-1 rounded badge"
  }
  return (
-   
    <div className="score ">
      <tr key={sport_event_status.results}><td className={bg}>{sport_event_status.sport_event_status.home_score}</td>
-     
      {
        sport_event_status.sport_event_status.home_score || sport_event_status.sport_event_status.away_score >= 0 ? " : " : null
      }
-    
      <td className={bbg}>{sport_event_status.sport_event_status.away_score}</td></tr>
-     
    </div>
  )
 })}
@@ -82,7 +73,6 @@ let bbg;
         )
       })}
       </td>
-  
       <td>{ schedule.map((sport_event) => {
         return (
           <div>
@@ -92,21 +82,16 @@ let bbg;
         )
       })}
       </td>
- 
       <td>{ schedule.map((sport_event) => {
         return (
-          <div>
+          <div className='d-flex ms-4'>
             <tr key={sport_event.results}><td>{sport_event.sport_event.venue.name}</td>
             </tr>
           </div>
         )
       })}
       </td>
-      
-      
-      
       </table>
-  
     </div>
   )
 }

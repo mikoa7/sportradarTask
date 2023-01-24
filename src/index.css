@@ -1,6 +1,14 @@
 .score{
-
-  margin: 18.5px;
-
-
+  margin: 19px;
+}
+.scoreF{
+  display: flex;
+  margin-left: 17px;
+  margin-top: 12px;
+}
+.main{
+  background-color: #B8B8B8;
+}
+.venue{
+  transform: translateX(100px);
 }
